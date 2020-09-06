@@ -14,7 +14,6 @@ import javax.servlet.annotation.WebFilter;
 /**
  * Servlet Filter implementation class ResponseTimeFilter
  */
-@WebFilter(urlPatterns= {"/mypage1"})
 public class ResponseTimeFilter implements Filter {
 
     /**

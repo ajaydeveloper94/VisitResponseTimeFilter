@@ -14,7 +14,6 @@ import javax.servlet.annotation.WebFilter;
 /**
  * Servlet Filter implementation class VisitFilter
  */
-@WebFilter(urlPatterns= {  "/mypage2", "/mypage3"})
 public class VisitFilter implements Filter {
 	
 	static int count = 0;
@@ -34,10 +33,11 @@ public class VisitFilter implements Filter {
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		
-		PrintWriter pr = response.getWriter();		
-		chain.doFilter(request, response);
+		PrintWriter pr = response.getWriter();	
 		++count;
 		pr.print("<h1> Total Visits : "+ count +"</h1>");
+		
+		chain.doFilter(request, response);		
 		pr.close();
 	}
 

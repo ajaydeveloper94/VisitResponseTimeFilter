@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>FirstServletApp</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+
+		<filter>
+			<filter-name>visitfilter</filter-name>
+			<filter-class>com.simplilearn.filters.VisitFilter</filter-class>
+		</filter>
+
+		<filter-mapping>
+			<filter-name>visitfilter</filter-name>
+			<servlet-name>servlet1</servlet-name>
+		</filter-mapping>
+
+		<filter>
+			<filter-name>responsefilter</filter-name>
+			<filter-class>com.simplilearn.filters.ResponseTimeFilter</filter-class>
+		</filter>
+
+		<filter-mapping>
+			<filter-name>responsefilter</filter-name>
+			<servlet-name>servlet1</servlet-name>
+		</filter-mapping>
+
+		<servlet>
+			<servlet-name>servlet1</servlet-name>
+			<servlet-class>com.simplilearn.servlet.MyPage</servlet-class>
+		</servlet>
+
+		<servlet-mapping>
+			<servlet-name>servlet1</servlet-name>
+			<url-pattern>/mypage</url-pattern>
+		</servlet-mapping>
+
+</web-app>
